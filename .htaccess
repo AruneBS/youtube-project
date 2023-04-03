@@ -1,0 +1,6 @@
+# Apache (.htaccess or httpd.conf)
+RewriteEngine On
+#RewriteBase /fullstack-projektai/youtube-project/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /fullstack-projektai/youtube-project/index.php [L]

@@ -1,0 +1,21 @@
+{
+    "name": "arune/youtube-project",
+    "description": "Youtube clone app, training",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Controllers\\": "controllers/",
+            "Model\\": "model/"
+
+        }
+    },
+    "authors": [
+        {
+            "name": "Arūnė Bražiūnaitė",
+            "email": "117632336+AruneBS@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "klein/klein": "^2.1"
+    }
+}
