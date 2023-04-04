@@ -42,7 +42,7 @@ include __DIR__ . '/head.php'
 
 
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+                    <input type="search" class="form-control form-control-dark text-bg-light" placeholder="Search..." aria-label="Search">
                 </form>
 
                 <div class="col-md-3 text-end">
@@ -50,9 +50,9 @@ include __DIR__ . '/head.php'
                         <a href="?page=login" type="button" class="btn btn-outline-light me-2">Login</a>
                         <a href="?page=register" type="button" class="btn btn-dark">Sign-up</a>
                     <?php else : ?>
-                        <a href="?page=/&action=add" class="btn btn-outline-dark me-2" id="newVideo">Add new video</a>
+                        <a href="?page=/&action=add" class="btn btn-outline-light me-2" id="newVideo">Add new video</a>
                         <a href="?page=logout" class="btn btn-danger">Logout</a>
-                        <span class="p-2 mt-2 bg-success text-white rounded-circle firstLetter"><?= substr($_SESSION['user_name'], 0, 1); ?></span>
+                        <span class="p-1 mt-1 bg-success text-white badge rounded-pill text-bg-warning name"><?= ($_SESSION['user_name']); ?></span>
                     <?php endif; ?>
                 </div>
             </div>
