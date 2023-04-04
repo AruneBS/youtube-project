@@ -24,14 +24,14 @@ class Admin {
                 'status' => 'danger'
             ];
 
-            header('Location: /login?' . http_build_query($error));
+            header('Location: ?page=/login&' . http_build_query($error));
             exit;
         }
 
         $_SESSION['user_id'] = $user->records[0]['id'];
         $_SESSION['user_name'] = $user->records[0]['user_name'];
         
-        header('Location: /');
+        header('Location: ?page=/');
         exit;
     }
 
@@ -43,20 +43,16 @@ class Admin {
        
         $users = new Users;
 
-        if(
-            $users
-            ->getRecordsBy([
+        if($users->getRecordsBy([
                 'email' => $_POST['email'],
-                'username' => $_POST['username']
-            ], 'OR')
-            ->recordsExists()
-        ) {
+                'user_name' => $_POST['username']
+            ], 'OR')->recordsExists()) {
             $error = [
                 'message' => 'This user already exists',
                 'status' => 'danger'
             ];
 
-            header('Location: /register?' . http_build_query($error));
+            header('Location: ?page=register&' . http_build_query($error));
             exit;
         }
 
@@ -65,11 +61,11 @@ class Admin {
         $users->addRecord($_POST);
 
         $error = [
-            'message' => 'User successfully registered.',
+            'message' => 'User successfully registered',
             'status' => 'success'
         ];
 
-        header('Location: /login?' . http_build_query($error));
+        header('Location: ?page=login&' . http_build_query($error));
         exit;
     }
 }

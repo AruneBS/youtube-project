@@ -98,7 +98,7 @@ include __DIR__ . '/content/head.php';
         <?php include __DIR__ . '/content/messages.php' ?>
 
         <div class="form-floating">
-            <input type="text" class="form-control" name="username" placeholder="destroyer3000">
+            <input type="text" class="form-control" name="user_name" placeholder="destroyer3000">
             <label>User Name</label>
         </div>
         <div class="form-floating">

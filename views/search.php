@@ -1,5 +1,5 @@
 <?php 
-    include __DIR__ . '/content/head.php';
+    include __DIR__ . '/content/header.php';
 ?>
 
 <div class="container">

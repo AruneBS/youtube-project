@@ -31,7 +31,7 @@ require_once 'vendor/autoload.php';
 // $prefix = '/fullstack-projektai/youtube-project/';
 
 // $klein->respond('GET', $prefix.'/', function () {
-  
+
 //     return Controllers\Homepage::index();
 // });
 
@@ -54,13 +54,21 @@ switch ($page) {
             Controllers\Admin::processRegistration();
         }
         break;
-        case 'login':
-                if($_SERVER['REQUEST_METHOD'] === 'GET'){
-                    Controllers\Admin::loginIndex();
-                } else if($_SERVER['REQUEST_METHOD'] === 'POST') {
-                    Controllers\Admin::processLogin();
-                }
-                break;
+    case 'login':
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            Controllers\Admin::loginIndex();
+        } else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            Controllers\Admin::processLogin();
+        }
+        break;
+    case 'logout':
+        session_destroy();
+        header('Location: ?page=/');
+        break;
+    case 'videos':
+        Controllers\Video::toSingleVideo($_GET['id']);
+        break;
+
     default:
         Controllers\Homepage::index();
 }
