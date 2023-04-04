@@ -31,11 +31,11 @@ include __DIR__ . '/head.php'
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li>
-                    <a href="/" class="nav-link px-2 text-white">Home</a>
+                    <a href="?page=/" class="nav-link px-2 text-white">Home</a>
                 </li>
                 <?php foreach ($categories as $category) : ?>
-                    <li>
-                        <a href="<?= '/category/' . $category['id'] ?>" class="nav-link px-2 text-white"><?= $category['name'] ?></a>
+                    <li class="">
+                        <a href="?page=category&id=<?=$category['id'] ?>" class="nav-link px-2 text-white"><?= $category['name'] ?></a>
                     </li>
                 <?php endforeach; ?>
             </ul>
